@@ -15,6 +15,9 @@
  */
 package com.github.abci.kisso_test_sparkjava;
 
+import com.github.tuzip.sso.SSOToken;
+import com.github.tuzip.sso.client.SSOHelper;
+
 import spark.Request;
 import spark.Response;
 import spark.Route;
@@ -33,7 +36,7 @@ public class ClientRoute extends Route {
 
 	@Override
 	public Object handle(Request request, Response response) {
-		SSOToken token = SSOHelper.getSSOToken(request.raw());
+		SSOToken token = (SSOToken) SSOHelper.getToken(request.raw());
 		if (token != null) {
 			return "----- login , userId ---" + token.getUserId();
 		} else {

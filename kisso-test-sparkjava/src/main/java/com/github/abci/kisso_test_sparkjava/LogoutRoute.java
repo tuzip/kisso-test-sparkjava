@@ -15,6 +15,8 @@
  */
 package com.github.abci.kisso_test_sparkjava;
 
+import com.github.tuzip.sso.client.SSOHelper;
+
 import spark.Request;
 import spark.Response;
 import spark.Route;

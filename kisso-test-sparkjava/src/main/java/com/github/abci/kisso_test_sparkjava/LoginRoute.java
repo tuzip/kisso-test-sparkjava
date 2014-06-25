@@ -22,6 +22,13 @@ import spark.Request;
 import spark.Response;
 import spark.template.velocity.VelocityRoute;
 
+import com.github.tuzip.sso.LoginHelper;
+import com.github.tuzip.sso.SSOToken;
+import com.github.tuzip.sso.client.SSOHelper;
+import com.github.tuzip.sso.common.CookieHelper;
+import com.github.tuzip.sso.common.util.RandomUtil;
+import com.github.tuzip.sso.waf.request.WafRequestWrapper;
+
 /**
  * 登录路由
  * <p>
@@ -37,7 +44,7 @@ public class LoginRoute extends VelocityRoute {
 	@Override
 	public Object handle(Request request, Response response) {
 		String htmltpl = "login.html";
-		SSOToken token = SSOHelper.getSSOToken(request.raw());
+		SSOToken token = (SSOToken) SSOHelper.getToken(request.raw());
 		if (token == null) {
 			/**
 			 * 正常登录

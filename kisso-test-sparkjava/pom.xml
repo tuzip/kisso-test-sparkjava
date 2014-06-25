@@ -18,7 +18,7 @@
 		<dependency>
 			<groupId>com.github.tuzip</groupId>
 			<artifactId>kisso</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
+			<version>1.0.0-RELEASE</version>
 		</dependency>
 		<!-- web-mvc framework https://github.com/perwendel/spark -->
 		<dependency>
